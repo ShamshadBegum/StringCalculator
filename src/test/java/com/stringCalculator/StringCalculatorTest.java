@@ -38,4 +38,19 @@ public class StringCalculatorTest {
     public void delimiterString(){
         assertEquals(3, StringCalculator.add("//;\n1;2"));
     }
+
+    @Test
+    public void negativesNotAllowed(){
+        try{
+            StringCalculator.add("-1,2");
+        }catch(IllegalArgumentException illegalArgumentException){
+            assertEquals(illegalArgumentException.getMessage(), "Negatives not allowed: -1");
+        }
+
+        try{
+            StringCalculator.add("2,-4,3,-5");
+        }catch(IllegalArgumentException illegalArgumentException){
+            assertEquals(illegalArgumentException.getMessage(), "Negatives not allowed: -4,-5");
+        }
+    }
 }
