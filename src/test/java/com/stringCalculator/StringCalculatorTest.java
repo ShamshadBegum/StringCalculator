@@ -23,4 +23,9 @@ public class StringCalculatorTest {
     public void twoString() {
         assertEquals(3, StringCalculator.add("1,2"));
     }
+
+    @Test
+    public void numberOfString(){
+        assertEquals(2, StringCalculator.add("1000,2"));
+    }
 }
