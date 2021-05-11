@@ -53,4 +53,9 @@ public class StringCalculatorTest {
             assertEquals(illegalArgumentException.getMessage(), "Negatives not allowed: -4,-5");
         }
     }
+
+    @Test
+    public void moreThanThousandShouldIgnore(){
+        assertEquals(2, StringCalculator.add("2,1001"));
+    }
 }
