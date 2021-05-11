@@ -28,4 +28,9 @@ public class StringCalculatorTest {
     public void numberOfString(){
         assertEquals(2, StringCalculator.add("1000,2"));
     }
+
+    @Test
+    public void newLinesBetweenNumbers(){
+        assertEquals(6, StringCalculator.add("1\n2,3"));
+    }
 }
